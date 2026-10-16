@@ -3,16 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#200e20">
 <title>For Shreya 💗</title>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
 
 :root {
-    --pink: #ff8fb8;
-    --light-pink: #ffd6e5;
-    --deep-pink: #ed5d96;
+    --pink: #ff8fba;
+    --light: #ffd8e7;
     --white: #fff8fb;
+    --glass: rgba(25, 10, 24, .79);
 }
 
 * {
@@ -23,8 +24,8 @@
 
 body {
     min-height: 100vh;
+    background: #1b0b19;
     color: var(--white);
-    background: #170b16;
     font-family: 'DM Sans', sans-serif;
     overflow-x: hidden;
 }
@@ -40,8 +41,8 @@ button {
     inset: 0;
     z-index: -2;
     background:
-        linear-gradient(rgba(22, 7, 19, .76), rgba(51, 12, 37, .83)),
-        url("./shreya1.png") center/cover no-repeat;
+        linear-gradient(rgba(25, 7, 22, .76), rgba(46, 12, 38, .84)),
+        url("./1000101783.png") center/cover no-repeat;
     transform: scale(1.03);
 }
 
@@ -50,8 +51,8 @@ button {
     position: absolute;
     inset: 0;
     background:
-        radial-gradient(circle at 10% 10%, #ff75aa22, transparent 35%),
-        radial-gradient(circle at 90% 90%, #ba5eff22, transparent 40%);
+        radial-gradient(circle at 10% 10%, #ff80b522, transparent 35%),
+        radial-gradient(circle at 90% 90%, #d15cff20, transparent 40%);
 }
 
 #hearts {
@@ -64,9 +65,9 @@ button {
 
 .heart {
     position: absolute;
-    bottom: -40px;
-    color: #ff91bc;
-    opacity: .7;
+    bottom: -35px;
+    color: #ff8fba;
+    opacity: .75;
     animation: floatUp linear forwards;
 }
 
@@ -83,14 +84,14 @@ button {
     align-items: center;
     justify-content: center;
     padding: 25px 15px;
-    animation: fadeIn .45s ease;
+    animation: appear .45s ease;
 }
 
 .page.active {
     display: flex;
 }
 
-@keyframes fadeIn {
+@keyframes appear {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
 }
@@ -99,21 +100,12 @@ button {
     width: min(100%, 450px);
     padding: 30px 22px;
     text-align: center;
-    background: rgba(20, 9, 20, .76);
-    border: 1px solid rgba(255,255,255,.18);
+    background: var(--glass);
+    border: 1px solid #ffffff25;
     border-radius: 28px;
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
     box-shadow: 0 25px 70px #0005;
-}
-
-.eyebrow {
-    display: block;
-    margin-bottom: 16px;
-    color: var(--light-pink);
-    font-size: 10px;
-    letter-spacing: 3px;
-    line-height: 1.8;
 }
 
 h1, h2 {
@@ -140,12 +132,21 @@ p {
     line-height: 1.8;
 }
 
+.eyebrow {
+    display: block;
+    margin-bottom: 16px;
+    color: var(--light);
+    font-size: 10px;
+    letter-spacing: 3px;
+    line-height: 1.8;
+}
+
 .subtitle {
     margin: 15px 0 23px;
 }
 
 .small {
-    color: #d8bdcb;
+    color: #d9bdcc;
     font-size: 12px;
 }
 
@@ -157,7 +158,7 @@ p {
     border-radius: 999px;
     font-weight: 700;
     box-shadow: 0 8px 25px #ff70a533;
-    transition: .2s;
+    transition: transform .2s;
 }
 
 .primary-btn:active,
@@ -198,9 +199,9 @@ p {
 .dot {
     width: 13px;
     height: 13px;
+    background: #ffffff14;
     border: 1px solid #ffffff80;
     border-radius: 50%;
-    background: #ffffff14;
 }
 
 .dot.filled {
@@ -262,7 +263,7 @@ p {
     font-size: 11px;
 }
 
-/* PHOTO STYLING */
+/* PHOTOS */
 
 .profile-photo {
     display: block;
@@ -293,19 +294,15 @@ p {
     background: #35172b;
 }
 
-/* Visible message if an image fails to load */
-
 .photo-wrap {
-    position: relative;
     min-width: 0;
 }
 
 .photo-error {
     display: none;
-    padding: 12px 4px;
+    padding: 10px 4px;
     color: #ffd6e5;
     font-size: 11px;
-    line-height: 1.5;
 }
 
 /* CAKE */
@@ -405,7 +402,6 @@ p {
 .envelope {
     position: absolute;
     inset: 0;
-    overflow: visible;
     background: #ffb7d0;
     border-radius: 8px;
     box-shadow: 0 12px 35px #0004;
@@ -492,8 +488,8 @@ p {
 <!-- PAGE 1: PASSWORD -->
 <section class="page active" id="page1">
     <div class="card" id="passwordCard">
-        <div class="top-heart">💗</div>
 
+        <div class="top-heart">💗</div>
         <span class="eyebrow">A LITTLE SURPRISE AWAITS</span>
 
         <h1>Hey, <span class="pink">Shreya</span></h1>
@@ -531,7 +527,6 @@ p {
         </div>
 
         <p class="message" id="passwordMessage" aria-live="polite"></p>
-
         <p class="footer">Made with a little extra love ♡</p>
     </div>
 </section>
@@ -539,10 +534,10 @@ p {
 <!-- PAGE 2: WELCOME -->
 <section class="page" id="page2">
     <div class="card">
+
         <img class="profile-photo"
-             src="./shreya1.png"
-             alt="A special memory"
-             onerror="this.style.display='none'">
+             src="./1000101783.png"
+             alt="A special memory">
 
         <span class="eyebrow">UNLOCKED SUCCESSFULLY ✨</span>
 
@@ -559,11 +554,11 @@ p {
     </div>
 </section>
 
-<!-- PAGE 3: YES OR NO -->
+<!-- PAGE 3: QUESTION -->
 <section class="page" id="page3">
     <div class="card">
-        <div class="top-heart">🥺💗</div>
 
+        <div class="top-heart">🥺💗</div>
         <span class="eyebrow">ONE TINY QUESTION</span>
 
         <h2>Are you ready for your birthday surprise?</h2>
@@ -582,9 +577,10 @@ p {
     </div>
 </section>
 
-<!-- PAGE 4: BIRTHDAY CAKE -->
+<!-- PAGE 4: BIRTHDAY -->
 <section class="page" id="page4">
     <div class="card">
+
         <span class="eyebrow">TODAY IS ALL ABOUT YOU</span>
 
         <h1>Happy Birthday,<br><span class="pink">Shreya!</span> 🎂</h1>
@@ -614,6 +610,7 @@ p {
 <!-- PAGE 5: GALLERY -->
 <section class="page" id="page5">
     <div class="card">
+
         <span class="eyebrow">LITTLE MOMENTS, LOVELY MEMORIES</span>
 
         <h2>Our little <span class="pink">gallery</span> 📸</h2>
@@ -623,33 +620,37 @@ p {
         </p>
 
         <div class="gallery">
+
             <div class="photo-wrap">
                 <img
                     id="galleryPhoto1"
-                    src="./shreya1.png"
-                    alt="Memory one"
-                >
+                    src="./1000101783.png"
+                    alt="Memory one">
+
                 <p id="error1" class="photo-error">
-                    Photo not found. Check that shreya1.png is beside index.html.
+                    Photo unavailable. Check the filename.
                 </p>
             </div>
 
             <div class="photo-wrap">
                 <img
                     id="galleryPhoto2"
-                    src="./shreya2.png"
-                    alt="Memory two"
-                >
+                    src="./1000101784.png"
+                    alt="Memory two">
+
                 <p id="error2" class="photo-error">
-                    Photo not found. Check that shreya2.png is beside index.html.
+                    Photo unavailable. Check the filename.
                 </p>
             </div>
+
         </div>
 
         <p>Every picture has its own little story. ♡</p>
 
         <div style="margin-top:22px">
-            <button class="secondary-btn" data-prev="page4">← Back</button>
+            <button class="secondary-btn" data-prev="page4">
+                ← Back
+            </button>
 
             <button class="primary-btn" data-next="page6">
                 One last thing 💌
@@ -661,16 +662,21 @@ p {
 <!-- PAGE 6: ENVELOPE -->
 <section class="page" id="page6">
     <div class="card">
+
         <span class="eyebrow">A LITTLE LETTER FOR YOU</span>
 
         <h2>Something from the <span class="pink">heart</span></h2>
 
         <p class="subtitle">Tap the envelope to open it. 💌</p>
 
-        <div class="envelope-area" id="envelopeArea"
-             role="button" tabindex="0" aria-label="Open the letter">
+        <div class="envelope-area"
+             id="envelopeArea"
+             role="button"
+             tabindex="0"
+             aria-label="Open the letter">
 
             <div class="envelope" id="envelope">
+
                 <div class="paper">
                     <strong>Dear Shreya,</strong><br><br>
                     A little note made especially for you...
@@ -678,6 +684,7 @@ p {
 
                 <div class="envelope-flap"></div>
                 <div class="envelope-heart">♥</div>
+
             </div>
         </div>
 
@@ -685,7 +692,8 @@ p {
             Tap once to open your letter ♡
         </p>
 
-        <button class="primary-btn" id="readLetterBtn"
+        <button class="primary-btn"
+                id="readLetterBtn"
                 style="display:none; margin-top:15px"
                 data-next="page7">
             Read your letter →
@@ -696,11 +704,13 @@ p {
 <!-- PAGE 7: LETTER -->
 <section class="page" id="page7">
     <div class="card">
+
         <span class="eyebrow">A FEW WORDS FOR YOU</span>
 
         <h2>Dear <span class="pink">Shreya</span> 💗</h2>
 
         <div class="letter-text">
+
             <p>Happy Birthday, Shreya! 🎂🌷</p>
 
             <p>
@@ -726,6 +736,7 @@ p {
                 With lots of best wishes,<br>
                 <strong>Someone who wishes you the best ♡</strong>
             </p>
+
         </div>
 
         <button class="primary-btn" data-next="page8">
@@ -737,10 +748,10 @@ p {
 <!-- PAGE 8: FINAL SURPRISE -->
 <section class="page" id="page8">
     <div class="card">
+
         <img class="profile-photo"
-             src="./shreya2.png"
-             alt="A lovely memory"
-             onerror="this.style.display='none'">
+             src="./1000101784.png"
+             alt="A lovely memory">
 
         <span class="eyebrow">THE LITTLE ENDING</span>
 
@@ -759,16 +770,21 @@ p {
 
         <p class="pink">Happy Birthday once again, Shreya! ♡</p>
 
-        <button class="secondary-btn" id="restartBtn" style="margin-top:24px">
+        <button class="secondary-btn"
+                id="restartBtn"
+                style="margin-top:24px">
             ↻ Replay the surprise
         </button>
     </div>
 </section>
 
 <script>
-/* PASSWORD */
+/* ===================================
+   PASSWORD KEYPAD
+=================================== */
 
-const correctPassword = "0901";
+const CORRECT_PASSWORD = "0901";
+
 let enteredPassword = "";
 let passwordLocked = false;
 let passwordTimer = null;
@@ -796,35 +812,40 @@ function addNumber(number) {
     passwordMessage.textContent = "";
     updateDots();
 
-    if (enteredPassword.length === 4) {
-        passwordLocked = true;
+    if (enteredPassword.length !== 4) return;
 
-        passwordTimer = setTimeout(() => {
-            if (enteredPassword === correctPassword) {
-                passwordMessage.textContent = "Yay! Correct password 💗";
-                burstHearts(12);
+    passwordLocked = true;
 
-                setTimeout(() => {
-                    showPage("page2");
-                    resetPassword();
-                }, 450);
-            } else {
-                passwordCard.classList.remove("shake");
-                void passwordCard.offsetWidth;
-                passwordCard.classList.add("shake");
+    passwordTimer = setTimeout(() => {
 
+        if (enteredPassword === CORRECT_PASSWORD) {
+
+            passwordMessage.textContent = "Yay! Correct password 💗";
+            burstHearts(12);
+
+            setTimeout(() => {
+                showPage("page2");
+                resetPassword();
+            }, 450);
+
+        } else {
+
+            passwordCard.classList.remove("shake");
+            void passwordCard.offsetWidth;
+            passwordCard.classList.add("shake");
+
+            passwordMessage.textContent =
+                "Oopsie! Wrong password 🥺 Try again! 💕";
+
+            passwordTimer = setTimeout(() => {
+                resetPassword();
                 passwordMessage.textContent =
-                    "Oopsie! Wrong password 🥺 Try again! 💕";
+                    "It's okay, try once more 💗";
+                passwordCard.classList.remove("shake");
+            }, 1100);
+        }
 
-                passwordTimer = setTimeout(() => {
-                    resetPassword();
-                    passwordMessage.textContent =
-                        "It's okay, try once more 💗";
-                    passwordCard.classList.remove("shake");
-                }, 1100);
-            }
-        }, 180);
-    }
+    }, 180);
 }
 
 document.querySelectorAll("[data-number]").forEach(button => {
@@ -835,6 +856,7 @@ document.querySelectorAll("[data-number]").forEach(button => {
 
 document.getElementById("clearBtn").addEventListener("click", () => {
     if (passwordLocked) return;
+
     enteredPassword = "";
     passwordMessage.textContent = "";
     updateDots();
@@ -842,15 +864,18 @@ document.getElementById("clearBtn").addEventListener("click", () => {
 
 document.getElementById("deleteBtn").addEventListener("click", () => {
     if (passwordLocked) return;
+
     enteredPassword = enteredPassword.slice(0, -1);
     passwordMessage.textContent = "";
     updateDots();
 });
 
-/* KEYBOARD SUPPORT */
+/* Physical keyboard support */
 
 document.addEventListener("keydown", event => {
-    if (!document.getElementById("page1").classList.contains("active")) return;
+    if (!document.getElementById("page1").classList.contains("active")) {
+        return;
+    }
 
     if (/^[0-9]$/.test(event.key)) {
         addNumber(event.key);
@@ -863,7 +888,9 @@ document.addEventListener("keydown", event => {
     }
 });
 
-/* NAVIGATION */
+/* ===================================
+   PAGE NAVIGATION
+=================================== */
 
 function showPage(pageId) {
     document.querySelectorAll(".page").forEach(page => {
@@ -890,7 +917,9 @@ document.querySelectorAll("[data-prev]").forEach(button => {
     });
 });
 
-/* YES / NO QUESTION */
+/* ===================================
+   YES / NO QUESTION
+=================================== */
 
 document.getElementById("yesBtn").addEventListener("click", () => {
     showPage("page4");
@@ -913,7 +942,9 @@ document.getElementById("noBtn").addEventListener("click", () => {
     noClicks++;
 });
 
-/* ENVELOPE */
+/* ===================================
+   ENVELOPE
+=================================== */
 
 const envelope = document.getElementById("envelope");
 const envelopeArea = document.getElementById("envelopeArea");
@@ -939,16 +970,21 @@ envelopeArea.addEventListener("keydown", event => {
     }
 });
 
-/* FLOATING HEARTS */
+/* ===================================
+   FLOATING HEARTS
+=================================== */
 
 const heartsContainer = document.getElementById("hearts");
 
 function createHeart() {
     const heart = document.createElement("span");
+
     heart.className = "heart";
 
     const symbols = ["♡", "♥", "💕", "✧"];
-    heart.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+
+    heart.textContent =
+        symbols[Math.floor(Math.random() * symbols.length)];
 
     heart.style.left = Math.random() * 100 + "vw";
     heart.style.fontSize = (12 + Math.random() * 19) + "px";
@@ -967,38 +1003,44 @@ function burstHearts(amount) {
     }
 }
 
-/* PHOTO ERROR HANDLING */
+/* ===================================
+   PHOTO ERROR CHECKING
+=================================== */
 
-function handlePhotoError(imageId, errorId) {
+function checkPhoto(imageId, errorId) {
     const img = document.getElementById(imageId);
     const error = document.getElementById(errorId);
 
-    img.addEventListener("error", () => {
-        img.style.display = "none";
-        error.style.display = "block";
-    });
+    function updateImageStatus() {
+        if (img.naturalWidth > 0) {
+            img.style.display = "block";
+            error.style.display = "none";
+        } else {
+            img.style.display = "none";
+            error.style.display = "block";
+        }
+    }
 
-    img.addEventListener("load", () => {
-        img.style.display = "block";
-        error.style.display = "none";
-    });
+    img.addEventListener("load", updateImageStatus);
+    img.addEventListener("error", updateImageStatus);
 
-    // Handles images that fail before the listener is added.
-    if (img.complete && img.naturalWidth === 0) {
-        img.style.display = "none";
-        error.style.display = "block";
+    if (img.complete) {
+        updateImageStatus();
     }
 }
 
-handlePhotoError("galleryPhoto1", "error1");
-handlePhotoError("galleryPhoto2", "error2");
+checkPhoto("galleryPhoto1", "error1");
+checkPhoto("galleryPhoto2", "error2");
 
-/* RESTART */
+/* ===================================
+   RESTART WEBSITE
+=================================== */
 
 document.getElementById("restartBtn").addEventListener("click", () => {
     clearTimeout(passwordTimer);
 
     resetPassword();
+
     passwordMessage.textContent = "";
     document.getElementById("questionMessage").textContent = "";
 
@@ -1007,6 +1049,8 @@ document.getElementById("restartBtn").addEventListener("click", () => {
     envelope.classList.remove("open");
     envelopeMessage.textContent = "Tap once to open your letter ♡";
     readLetterBtn.style.display = "none";
+
+    passwordCard.classList.remove("shake");
 
     showPage("page1");
 });

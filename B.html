@@ -10,10 +10,10 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
 
 :root {
-    --pink: #ff8fba;
-    --light: #ffd8e7;
+    --pink: #ff91bc;
+    --light-pink: #ffd9e8;
     --white: #fff8fb;
-    --glass: rgba(25, 10, 24, .79);
+    --glass: rgba(25, 10, 24, .82);
 }
 
 * {
@@ -24,9 +24,9 @@
 
 body {
     min-height: 100vh;
-    background: #1b0b19;
+    background: #200e20;
     color: var(--white);
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'DM Sans', Arial, sans-serif;
     overflow-x: hidden;
 }
 
@@ -41,18 +41,22 @@ button {
     inset: 0;
     z-index: -2;
     background:
-        linear-gradient(rgba(25, 7, 22, .76), rgba(46, 12, 38, .84)),
-        url("./1000101783.png") center/cover no-repeat;
-    transform: scale(1.03);
+        radial-gradient(circle at top left, #54243f, transparent 50%),
+        linear-gradient(140deg, #170a19, #42152f);
+    background-size: cover;
+    background-position: center;
+    transition: background-image .3s ease;
 }
 
 .background::after {
     content: "";
     position: absolute;
     inset: 0;
-    background:
-        radial-gradient(circle at 10% 10%, #ff80b522, transparent 35%),
-        radial-gradient(circle at 90% 90%, #d15cff20, transparent 40%);
+    background: linear-gradient(
+        140deg,
+        rgba(23, 5, 20, .65),
+        rgba(40, 8, 32, .76)
+    );
 }
 
 #hearts {
@@ -60,14 +64,14 @@ button {
     inset: 0;
     overflow: hidden;
     pointer-events: none;
-    z-index: 5;
+    z-index: 10;
 }
 
 .heart {
     position: absolute;
     bottom: -35px;
     color: #ff8fba;
-    opacity: .75;
+    opacity: .8;
     animation: floatUp linear forwards;
 }
 
@@ -83,8 +87,8 @@ button {
     min-height: 100vh;
     align-items: center;
     justify-content: center;
-    padding: 25px 15px;
-    animation: appear .45s ease;
+    padding: 25px 14px;
+    animation: appear .4s ease;
 }
 
 .page.active {
@@ -97,19 +101,19 @@ button {
 }
 
 .card {
-    width: min(100%, 450px);
+    width: min(100%, 470px);
     padding: 30px 22px;
     text-align: center;
     background: var(--glass);
-    border: 1px solid #ffffff25;
-    border-radius: 28px;
+    border: 1px solid #ffffff28;
+    border-radius: 27px;
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
     box-shadow: 0 25px 70px #0005;
 }
 
 h1, h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Playfair Display', Georgia, serif;
     font-weight: 600;
     line-height: 1.2;
 }
@@ -135,9 +139,9 @@ p {
 .eyebrow {
     display: block;
     margin-bottom: 16px;
-    color: var(--light);
+    color: var(--light-pink);
     font-size: 10px;
-    letter-spacing: 3px;
+    letter-spacing: 2.5px;
     line-height: 1.8;
 }
 
@@ -187,6 +191,47 @@ p {
     40% { transform: scale(1); }
 }
 
+/* PHOTO SELECTOR */
+
+.photo-setup {
+    margin-bottom: 22px;
+    padding: 16px;
+    background: #ffffff09;
+    border: 1px solid #ffffff25;
+    border-radius: 18px;
+}
+
+.photo-setup h3 {
+    color: var(--pink);
+    margin-bottom: 10px;
+}
+
+.photo-setup p {
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+
+.photo-setup input {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    color: white;
+    font-size: 12px;
+    background: #ffffff0c;
+    border: 1px solid #ffffff25;
+    border-radius: 10px;
+}
+
+.photo-setup input::file-selector-button {
+    padding: 8px;
+    margin-right: 8px;
+    color: #3a1630;
+    background: #ffd3e4;
+    border: 0;
+    border-radius: 8px;
+}
+
 /* PASSWORD KEYPAD */
 
 .password-dots {
@@ -219,7 +264,7 @@ p {
 }
 
 .key {
-    min-height: 55px;
+    min-height: 54px;
     border: 1px solid #ffffff20;
     border-radius: 16px;
     background: #ffffff0c;
@@ -241,8 +286,8 @@ p {
 }
 
 .message {
-    min-height: 25px;
-    margin-top: 8px;
+    min-height: 24px;
+    margin-top: 9px;
     color: #ffb7d0;
     font-size: 12px;
 }
@@ -273,7 +318,9 @@ p {
     border: 3px solid #ffc4dc;
     border-radius: 50%;
     object-fit: cover;
+    object-position: center;
     box-shadow: 0 0 28px #ff83b444;
+    background: #35172b;
 }
 
 .gallery {
@@ -286,16 +333,12 @@ p {
 .gallery img {
     display: block;
     width: 100%;
-    height: 215px;
+    height: 225px;
     object-fit: cover;
     object-position: center;
     border: 1px solid #ffffff35;
     border-radius: 18px;
     background: #35172b;
-}
-
-.photo-wrap {
-    min-width: 0;
 }
 
 .photo-error {
@@ -308,7 +351,7 @@ p {
 /* CAKE */
 
 .cake-wrap {
-    height: 155px;
+    height: 150px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -354,7 +397,9 @@ p {
     left: 50%;
     width: 8px;
     height: 34px;
-    background: repeating-linear-gradient(45deg, white 0 5px, #ff83ae 5px 10px);
+    background: repeating-linear-gradient(
+        45deg, white 0 5px, #ff83ae 5px 10px
+    );
     transform: translateX(-50%);
     border-radius: 4px;
 }
@@ -397,6 +442,7 @@ p {
     height: 150px;
     margin: 30px auto 25px;
     cursor: pointer;
+    outline: none;
 }
 
 .envelope {
@@ -439,7 +485,7 @@ p {
     color: #66324b;
     background: #fff6fa;
     border-radius: 5px;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Playfair Display', Georgia, serif;
     font-size: 12px;
     transition: transform .7s, height .7s;
 }
@@ -482,12 +528,30 @@ p {
 
 <body>
 
-<div class="background"></div>
+<div class="background" id="background"></div>
 <div id="hearts"></div>
 
 <!-- PAGE 1: PASSWORD -->
 <section class="page active" id="page1">
     <div class="card" id="passwordCard">
+
+        <!-- Select your two photos here -->
+        <div class="photo-setup" id="photoSetup">
+            <h3>Add your photos 💗</h3>
+            <p>Select the two photos you sent. They will appear in the website gallery and background.</p>
+
+            <input id="photoOne" type="file" accept="image/*"
+                   aria-label="Select first photo">
+
+            <input id="photoTwo" type="file" accept="image/*"
+                   aria-label="Select second photo">
+
+            <button class="primary-btn" id="applyPhotos" type="button">
+                Load my photos 💕
+            </button>
+
+            <p id="photoStatus" style="margin-top:10px"></p>
+        </div>
 
         <div class="top-heart">💗</div>
         <span class="eyebrow">A LITTLE SURPRISE AWAITS</span>
@@ -499,7 +563,7 @@ p {
             Can you unlock it? 🌷
         </p>
 
-        <div class="password-dots">
+        <div class="password-dots" id="passwordDots">
             <span class="dot"></span>
             <span class="dot"></span>
             <span class="dot"></span>
@@ -534,13 +598,10 @@ p {
 <!-- PAGE 2: WELCOME -->
 <section class="page" id="page2">
     <div class="card">
-
-        <img class="profile-photo"
-             src="./1000101783.png"
+        <img class="profile-photo" id="welcomePhoto"
              alt="A special memory">
 
         <span class="eyebrow">UNLOCKED SUCCESSFULLY ✨</span>
-
         <h1>It's for <span class="pink">you</span>!</h1>
 
         <p class="subtitle">
@@ -557,21 +618,14 @@ p {
 <!-- PAGE 3: QUESTION -->
 <section class="page" id="page3">
     <div class="card">
-
         <div class="top-heart">🥺💗</div>
         <span class="eyebrow">ONE TINY QUESTION</span>
 
         <h2>Are you ready for your birthday surprise?</h2>
-
         <p class="subtitle">Choose carefully... hehe! 🌸</p>
 
-        <button class="primary-btn" id="yesBtn">
-            YES! Show me 💕
-        </button>
-
-        <button class="secondary-btn" id="noBtn">
-            Not yet 🙈
-        </button>
+        <button class="primary-btn" id="yesBtn">YES! Show me 💕</button>
+        <button class="secondary-btn" id="noBtn">Not yet 🙈</button>
 
         <p class="message" id="questionMessage"></p>
     </div>
@@ -580,16 +634,13 @@ p {
 <!-- PAGE 4: BIRTHDAY -->
 <section class="page" id="page4">
     <div class="card">
-
         <span class="eyebrow">TODAY IS ALL ABOUT YOU</span>
 
         <h1>Happy Birthday,<br><span class="pink">Shreya!</span> 🎂</h1>
 
         <div class="cake-wrap">
             <div class="cake">
-                <div class="candle">
-                    <div class="flame"></div>
-                </div>
+                <div class="candle"><div class="flame"></div></div>
             </div>
         </div>
 
@@ -610,51 +661,28 @@ p {
 <!-- PAGE 5: GALLERY -->
 <section class="page" id="page5">
     <div class="card">
-
         <span class="eyebrow">LITTLE MOMENTS, LOVELY MEMORIES</span>
 
         <h2>Our little <span class="pink">gallery</span> 📸</h2>
-
-        <p class="subtitle">
-            Some pictures make a day feel extra special.
-        </p>
+        <p class="subtitle">Some pictures make a day feel extra special.</p>
 
         <div class="gallery">
-
-            <div class="photo-wrap">
-                <img
-                    id="galleryPhoto1"
-                    src="./1000101783.png"
-                    alt="Memory one">
-
-                <p id="error1" class="photo-error">
-                    Photo unavailable. Check the filename.
-                </p>
+            <div>
+                <img id="galleryPhoto1" alt="Memory one">
+                <p id="error1" class="photo-error">Select your first photo on the opening page.</p>
             </div>
 
-            <div class="photo-wrap">
-                <img
-                    id="galleryPhoto2"
-                    src="./1000101784.png"
-                    alt="Memory two">
-
-                <p id="error2" class="photo-error">
-                    Photo unavailable. Check the filename.
-                </p>
+            <div>
+                <img id="galleryPhoto2" alt="Memory two">
+                <p id="error2" class="photo-error">Select your second photo on the opening page.</p>
             </div>
-
         </div>
 
         <p>Every picture has its own little story. ♡</p>
 
         <div style="margin-top:22px">
-            <button class="secondary-btn" data-prev="page4">
-                ← Back
-            </button>
-
-            <button class="primary-btn" data-next="page6">
-                One last thing 💌
-            </button>
+            <button class="secondary-btn" data-prev="page4">← Back</button>
+            <button class="primary-btn" data-next="page6">One last thing 💌</button>
         </div>
     </div>
 </section>
@@ -662,38 +690,25 @@ p {
 <!-- PAGE 6: ENVELOPE -->
 <section class="page" id="page6">
     <div class="card">
-
         <span class="eyebrow">A LITTLE LETTER FOR YOU</span>
-
         <h2>Something from the <span class="pink">heart</span></h2>
-
         <p class="subtitle">Tap the envelope to open it. 💌</p>
 
-        <div class="envelope-area"
-             id="envelopeArea"
-             role="button"
-             tabindex="0"
-             aria-label="Open the letter">
-
+        <div class="envelope-area" id="envelopeArea"
+             role="button" tabindex="0" aria-label="Open the letter">
             <div class="envelope" id="envelope">
-
                 <div class="paper">
                     <strong>Dear Shreya,</strong><br><br>
                     A little note made especially for you...
                 </div>
-
                 <div class="envelope-flap"></div>
                 <div class="envelope-heart">♥</div>
-
             </div>
         </div>
 
-        <p class="small" id="envelopeMessage">
-            Tap once to open your letter ♡
-        </p>
+        <p class="small" id="envelopeMessage">Tap once to open your letter ♡</p>
 
-        <button class="primary-btn"
-                id="readLetterBtn"
+        <button class="primary-btn" id="readLetterBtn"
                 style="display:none; margin-top:15px"
                 data-next="page7">
             Read your letter →
@@ -704,13 +719,10 @@ p {
 <!-- PAGE 7: LETTER -->
 <section class="page" id="page7">
     <div class="card">
-
         <span class="eyebrow">A FEW WORDS FOR YOU</span>
-
         <h2>Dear <span class="pink">Shreya</span> 💗</h2>
 
         <div class="letter-text">
-
             <p>Happy Birthday, Shreya! 🎂🌷</p>
 
             <p>
@@ -736,7 +748,6 @@ p {
                 With lots of best wishes,<br>
                 <strong>Someone who wishes you the best ♡</strong>
             </p>
-
         </div>
 
         <button class="primary-btn" data-next="page8">
@@ -748,18 +759,12 @@ p {
 <!-- PAGE 8: FINAL SURPRISE -->
 <section class="page" id="page8">
     <div class="card">
-
-        <img class="profile-photo"
-             src="./1000101784.png"
-             alt="A lovely memory">
+        <img class="profile-photo" id="finalPhoto" alt="A lovely memory">
 
         <span class="eyebrow">THE LITTLE ENDING</span>
-
         <h1>Keep <span class="pink">smiling</span>! 🌸</h1>
 
-        <div class="top-heart" style="margin-top:20px">
-            🎂💗🎁
-        </div>
+        <div class="top-heart" style="margin-top:20px">🎂💗🎁</div>
 
         <p class="subtitle">
             This little website was made to bring a smile to your face.
@@ -770,21 +775,81 @@ p {
 
         <p class="pink">Happy Birthday once again, Shreya! ♡</p>
 
-        <button class="secondary-btn"
-                id="restartBtn"
-                style="margin-top:24px">
+        <button class="secondary-btn" id="restartBtn" style="margin-top:24px">
             ↻ Replay the surprise
         </button>
     </div>
 </section>
 
 <script>
-/* ===================================
-   PASSWORD KEYPAD
-=================================== */
+"use strict";
 
+/* PHOTO LOADING: select photos from your phone */
+let photoURLs = ["", ""];
+
+const photoOne = document.getElementById("photoOne");
+const photoTwo = document.getElementById("photoTwo");
+const photoStatus = document.getElementById("photoStatus");
+
+document.getElementById("applyPhotos").addEventListener("click", function () {
+    const first = photoOne.files[0];
+    const second = photoTwo.files[0];
+
+    if (!first || !second) {
+        photoStatus.textContent = "Please select both photos first 💗";
+        return;
+    }
+
+    if (!first.type.startsWith("image/") ||
+        !second.type.startsWith("image/")) {
+        photoStatus.textContent = "Please choose valid image files.";
+        return;
+    }
+
+    const reader1 = new FileReader();
+    const reader2 = new FileReader();
+
+    reader1.onerror = () => {
+        photoStatus.textContent = "Could not read the first photo. Try again.";
+    };
+
+    reader2.onerror = () => {
+        photoStatus.textContent = "Could not read the second photo. Try again.";
+    };
+
+    reader1.onload = function () {
+        photoURLs[0] = reader1.result;
+
+        reader2.onload = function () {
+            photoURLs[1] = reader2.result;
+
+            document.getElementById("galleryPhoto1").src = photoURLs[0];
+            document.getElementById("galleryPhoto2").src = photoURLs[1];
+            document.getElementById("welcomePhoto").src = photoURLs[0];
+            document.getElementById("finalPhoto").src = photoURLs[1];
+
+            document.getElementById("galleryPhoto1").style.display = "block";
+            document.getElementById("galleryPhoto2").style.display = "block";
+
+            document.getElementById("error1").style.display = "none";
+            document.getElementById("error2").style.display = "none";
+
+            document.getElementById("background").style.backgroundImage =
+                "linear-gradient(rgba(25,7,22,.72),rgba(46,12,38,.80)),url('" +
+                photoURLs[0] + "')";
+
+            photoStatus.textContent = "Both photos loaded successfully! 💖";
+            burstHearts(8);
+        };
+
+        reader2.readAsDataURL(second);
+    };
+
+    reader1.readAsDataURL(first);
+});
+
+/* PASSWORD KEYPAD */
 const CORRECT_PASSWORD = "0901";
-
 let enteredPassword = "";
 let passwordLocked = false;
 let passwordTimer = null;
@@ -816,20 +881,16 @@ function addNumber(number) {
 
     passwordLocked = true;
 
-    passwordTimer = setTimeout(() => {
-
+    passwordTimer = setTimeout(function () {
         if (enteredPassword === CORRECT_PASSWORD) {
-
             passwordMessage.textContent = "Yay! Correct password 💗";
             burstHearts(12);
 
-            setTimeout(() => {
+            setTimeout(function () {
                 showPage("page2");
                 resetPassword();
             }, 450);
-
         } else {
-
             passwordCard.classList.remove("shake");
             void passwordCard.offsetWidth;
             passwordCard.classList.add("shake");
@@ -837,45 +898,35 @@ function addNumber(number) {
             passwordMessage.textContent =
                 "Oopsie! Wrong password 🥺 Try again! 💕";
 
-            passwordTimer = setTimeout(() => {
+            passwordTimer = setTimeout(function () {
                 resetPassword();
-                passwordMessage.textContent =
-                    "It's okay, try once more 💗";
+                passwordMessage.textContent = "Try once more 💗";
                 passwordCard.classList.remove("shake");
             }, 1100);
         }
-
     }, 180);
 }
 
 document.querySelectorAll("[data-number]").forEach(button => {
-    button.addEventListener("click", () => {
-        addNumber(button.dataset.number);
-    });
+    button.addEventListener("click", () => addNumber(button.dataset.number));
 });
 
-document.getElementById("clearBtn").addEventListener("click", () => {
+document.getElementById("clearBtn").addEventListener("click", function () {
     if (passwordLocked) return;
-
     enteredPassword = "";
     passwordMessage.textContent = "";
     updateDots();
 });
 
-document.getElementById("deleteBtn").addEventListener("click", () => {
+document.getElementById("deleteBtn").addEventListener("click", function () {
     if (passwordLocked) return;
-
     enteredPassword = enteredPassword.slice(0, -1);
     passwordMessage.textContent = "";
     updateDots();
 });
 
-/* Physical keyboard support */
-
-document.addEventListener("keydown", event => {
-    if (!document.getElementById("page1").classList.contains("active")) {
-        return;
-    }
+document.addEventListener("keydown", function (event) {
+    if (!document.getElementById("page1").classList.contains("active")) return;
 
     if (/^[0-9]$/.test(event.key)) {
         addNumber(event.key);
@@ -888,10 +939,7 @@ document.addEventListener("keydown", event => {
     }
 });
 
-/* ===================================
-   PAGE NAVIGATION
-=================================== */
-
+/* PAGE NAVIGATION */
 function showPage(pageId) {
     document.querySelectorAll(".page").forEach(page => {
         page.classList.remove("active");
@@ -906,29 +954,22 @@ function showPage(pageId) {
 }
 
 document.querySelectorAll("[data-next]").forEach(button => {
-    button.addEventListener("click", () => {
-        showPage(button.dataset.next);
-    });
+    button.addEventListener("click", () => showPage(button.dataset.next));
 });
 
 document.querySelectorAll("[data-prev]").forEach(button => {
-    button.addEventListener("click", () => {
-        showPage(button.dataset.prev);
-    });
+    button.addEventListener("click", () => showPage(button.dataset.prev));
 });
 
-/* ===================================
-   YES / NO QUESTION
-=================================== */
-
-document.getElementById("yesBtn").addEventListener("click", () => {
+/* YES / NO */
+document.getElementById("yesBtn").addEventListener("click", function () {
     showPage("page4");
     burstHearts(18);
 });
 
 let noClicks = 0;
 
-document.getElementById("noBtn").addEventListener("click", () => {
+document.getElementById("noBtn").addEventListener("click", function () {
     const messages = [
         "Are you sure? 🥺",
         "Just a tiny surprise! 🙈",
@@ -942,10 +983,7 @@ document.getElementById("noBtn").addEventListener("click", () => {
     noClicks++;
 });
 
-/* ===================================
-   ENVELOPE
-=================================== */
-
+/* ENVELOPE */
 const envelope = document.getElementById("envelope");
 const envelopeArea = document.getElementById("envelopeArea");
 const envelopeMessage = document.getElementById("envelopeMessage");
@@ -957,41 +995,33 @@ function openEnvelope() {
     envelope.classList.add("open");
     envelopeMessage.textContent = "Your letter is ready 💌";
     readLetterBtn.style.display = "inline-block";
-
     burstHearts(8);
 }
 
 envelopeArea.addEventListener("click", openEnvelope);
 
-envelopeArea.addEventListener("keydown", event => {
+envelopeArea.addEventListener("keydown", function (event) {
     if (event.key === "Enter" || event.key === " ") {
         event.preventDefault();
         openEnvelope();
     }
 });
 
-/* ===================================
-   FLOATING HEARTS
-=================================== */
-
+/* FLOATING HEARTS */
 const heartsContainer = document.getElementById("hearts");
 
 function createHeart() {
     const heart = document.createElement("span");
-
     heart.className = "heart";
 
     const symbols = ["♡", "♥", "💕", "✧"];
-
-    heart.textContent =
-        symbols[Math.floor(Math.random() * symbols.length)];
+    heart.textContent = symbols[Math.floor(Math.random() * symbols.length)];
 
     heart.style.left = Math.random() * 100 + "vw";
     heart.style.fontSize = (12 + Math.random() * 19) + "px";
     heart.style.animationDuration = (7 + Math.random() * 7) + "s";
 
     heartsContainer.appendChild(heart);
-
     setTimeout(() => heart.remove(), 15000);
 }
 
@@ -1003,53 +1033,18 @@ function burstHearts(amount) {
     }
 }
 
-/* ===================================
-   PHOTO ERROR CHECKING
-=================================== */
-
-function checkPhoto(imageId, errorId) {
-    const img = document.getElementById(imageId);
-    const error = document.getElementById(errorId);
-
-    function updateImageStatus() {
-        if (img.naturalWidth > 0) {
-            img.style.display = "block";
-            error.style.display = "none";
-        } else {
-            img.style.display = "none";
-            error.style.display = "block";
-        }
-    }
-
-    img.addEventListener("load", updateImageStatus);
-    img.addEventListener("error", updateImageStatus);
-
-    if (img.complete) {
-        updateImageStatus();
-    }
-}
-
-checkPhoto("galleryPhoto1", "error1");
-checkPhoto("galleryPhoto2", "error2");
-
-/* ===================================
-   RESTART WEBSITE
-=================================== */
-
-document.getElementById("restartBtn").addEventListener("click", () => {
+/* RESTART */
+document.getElementById("restartBtn").addEventListener("click", function () {
     clearTimeout(passwordTimer);
 
     resetPassword();
-
     passwordMessage.textContent = "";
     document.getElementById("questionMessage").textContent = "";
-
     noClicks = 0;
 
     envelope.classList.remove("open");
     envelopeMessage.textContent = "Tap once to open your letter ♡";
     readLetterBtn.style.display = "none";
-
     passwordCard.classList.remove("shake");
 
     showPage("page1");

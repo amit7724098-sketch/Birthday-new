@@ -6,35 +6,31 @@
 <title>For Shreya 💗</title>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
 
 :root {
-    --pink: #ff77a8;
-    --light-pink: #ffd3e2;
-    --deep-pink: #e94f89;
+    --pink: #ff8fb8;
+    --light-pink: #ffd6e5;
+    --deep-pink: #ed5d96;
     --white: #fff8fb;
-    --glass: rgba(255,255,255,.10);
 }
 
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 body {
     min-height: 100vh;
     color: var(--white);
+    background: #170b16;
     font-family: 'DM Sans', sans-serif;
-    background: #130a13;
     overflow-x: hidden;
 }
 
-button, input {
-    font: inherit;
-}
-
 button {
+    font: inherit;
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
 }
@@ -42,11 +38,10 @@ button {
 .background {
     position: fixed;
     inset: 0;
-    z-index: -3;
+    z-index: -2;
     background:
-        linear-gradient(135deg, rgba(16,7,18,.86), rgba(76,15,47,.65)),
-        url("shreya1.png") center/cover no-repeat;
-    filter: saturate(.85);
+        linear-gradient(rgba(22, 7, 19, .76), rgba(51, 12, 37, .83)),
+        url("./shreya1.png") center/cover no-repeat;
     transform: scale(1.03);
 }
 
@@ -55,25 +50,24 @@ button {
     position: absolute;
     inset: 0;
     background:
-        radial-gradient(circle at 15% 15%, rgba(255,100,160,.22), transparent 38%),
-        radial-gradient(circle at 85% 80%, rgba(150,65,180,.18), transparent 35%);
+        radial-gradient(circle at 10% 10%, #ff75aa22, transparent 35%),
+        radial-gradient(circle at 90% 90%, #ba5eff22, transparent 40%);
 }
 
 #hearts {
     position: fixed;
     inset: 0;
-    pointer-events: none;
     overflow: hidden;
+    pointer-events: none;
     z-index: 5;
 }
 
-.floating-heart {
+.heart {
     position: absolute;
     bottom: -40px;
-    color: #ff91b9;
-    opacity: .65;
+    color: #ff91bc;
+    opacity: .7;
     animation: floatUp linear forwards;
-    text-shadow: 0 0 15px rgba(255,100,170,.4);
 }
 
 @keyframes floatUp {
@@ -84,42 +78,42 @@ button {
 }
 
 .page {
-    min-height: 100vh;
     display: none;
+    min-height: 100vh;
     align-items: center;
     justify-content: center;
-    padding: 28px 16px;
-    animation: pageIn .55s ease both;
+    padding: 25px 15px;
+    animation: fadeIn .45s ease;
 }
 
 .page.active {
     display: flex;
 }
 
-@keyframes pageIn {
-    from { opacity: 0; transform: translateY(12px); }
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
 .card {
-    width: min(100%, 440px);
-    padding: 30px 23px;
+    width: min(100%, 450px);
+    padding: 30px 22px;
     text-align: center;
-    border: 1px solid rgba(255,255,255,.20);
+    background: rgba(20, 9, 20, .76);
+    border: 1px solid rgba(255,255,255,.18);
     border-radius: 28px;
-    background: rgba(22,10,22,.66);
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
-    box-shadow: 0 25px 80px rgba(0,0,0,.35);
+    box-shadow: 0 25px 70px #0005;
 }
 
 .eyebrow {
-    display: inline-block;
-    font-size: 11px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--light-pink);
+    display: block;
     margin-bottom: 16px;
+    color: var(--light-pink);
+    font-size: 10px;
+    letter-spacing: 3px;
+    line-height: 1.8;
 }
 
 h1, h2 {
@@ -129,15 +123,19 @@ h1, h2 {
 }
 
 h1 {
-    font-size: clamp(34px, 9vw, 49px);
+    font-size: clamp(34px, 9vw, 48px);
 }
 
 h2 {
-    font-size: clamp(27px, 7vw, 37px);
+    font-size: clamp(27px, 7vw, 36px);
+}
+
+.pink {
+    color: var(--pink);
 }
 
 p {
-    color: #f5dce7;
+    color: #f4dce7;
     font-size: 14px;
     line-height: 1.8;
 }
@@ -146,117 +144,106 @@ p {
     margin: 15px 0 23px;
 }
 
-.pink {
-    color: #ff9cbe;
-}
-
 .small {
-    font-size: 12px;
     color: #d8bdcb;
+    font-size: 12px;
 }
 
 .primary-btn {
-    border: 0;
+    padding: 14px 23px;
+    color: #391326;
+    background: linear-gradient(135deg, #ffd8e6, #ff8fb8);
+    border: none;
     border-radius: 999px;
-    padding: 14px 24px;
-    color: #381323;
-    background: linear-gradient(135deg, #ffd5e4, #ff8fb8);
     font-weight: 700;
-    box-shadow: 0 8px 25px rgba(255,91,153,.23);
-    transition: transform .2s, box-shadow .2s;
+    box-shadow: 0 8px 25px #ff70a533;
+    transition: .2s;
 }
 
-.primary-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 30px rgba(255,91,153,.32);
+.primary-btn:active,
+.secondary-btn:active {
+    transform: scale(.96);
 }
 
 .secondary-btn {
-    color: #ffe8f0;
-    background: rgba(255,255,255,.07);
-    border: 1px solid rgba(255,255,255,.20);
-    border-radius: 999px;
-    padding: 12px 20px;
+    padding: 12px 19px;
     margin: 5px;
+    color: #ffe8f0;
+    background: #ffffff0d;
+    border: 1px solid #ffffff2c;
+    border-radius: 999px;
 }
 
 .top-heart {
     font-size: 42px;
     margin-bottom: 13px;
-    animation: heartbeat 1.6s infinite;
+    animation: heartbeat 1.5s infinite;
 }
 
 @keyframes heartbeat {
-    0%, 100% { transform: scale(1); }
-    15% { transform: scale(1.12); }
-    30% { transform: scale(1); }
-    45% { transform: scale(1.08); }
+    0%,100% { transform: scale(1); }
+    20% { transform: scale(1.12); }
+    40% { transform: scale(1); }
 }
 
 /* PASSWORD KEYPAD */
 
-.password-display {
+.password-dots {
     display: flex;
     justify-content: center;
-    gap: 12px;
-    margin: 23px 0 9px;
+    gap: 13px;
+    margin: 25px 0 10px;
 }
 
 .dot {
     width: 13px;
     height: 13px;
+    border: 1px solid #ffffff80;
     border-radius: 50%;
-    background: rgba(255,255,255,.16);
-    border: 1px solid rgba(255,255,255,.42);
-    transition: .2s;
+    background: #ffffff14;
 }
 
 .dot.filled {
-    background: #ff9cbe;
-    border-color: #ff9cbe;
-    box-shadow: 0 0 12px rgba(255,120,170,.65);
-    transform: scale(1.1);
+    background: var(--pink);
+    border-color: var(--pink);
+    box-shadow: 0 0 12px #ff8fb8aa;
 }
 
 .keypad {
-    width: min(100%, 285px);
-    margin: 20px auto 10px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
+    width: min(100%, 285px);
+    margin: 22px auto 10px;
 }
 
 .key {
-    min-height: 56px;
-    border: 1px solid rgba(255,255,255,.16);
-    border-radius: 17px;
-    color: #fff1f7;
+    min-height: 55px;
+    border: 1px solid #ffffff20;
+    border-radius: 16px;
+    background: #ffffff0c;
+    color: white;
     font-size: 20px;
     font-weight: 600;
-    background: rgba(255,255,255,.075);
     transition: .15s;
 }
 
-.key:hover {
-    background: rgba(255,132,180,.20);
-    border-color: rgba(255,156,190,.6);
-}
-
 .key:active {
-    transform: scale(.94);
+    transform: scale(.93);
+    background: #ff8fb833;
 }
 
 .key.action {
     font-size: 11px;
-    letter-spacing: 1px;
-    color: #ffc0d8;
+    color: #ffc3d9;
+    letter-spacing: .5px;
 }
 
-.error {
+.message {
     min-height: 25px;
     margin-top: 8px;
+    color: #ffb7d0;
     font-size: 12px;
-    color: #ffb2cb;
 }
 
 .shake {
@@ -264,55 +251,82 @@ p {
 }
 
 @keyframes shake {
-    0%, 100% { transform: translateX(0); }
-    20%, 60% { transform: translateX(-7px); }
-    40%, 80% { transform: translateX(7px); }
+    0%,100% { transform: translateX(0); }
+    25%,75% { transform: translateX(-6px); }
+    50% { transform: translateX(6px); }
 }
 
-/* WELCOME PHOTO */
+.footer {
+    margin-top: 20px;
+    color: #cbb1c1;
+    font-size: 11px;
+}
+
+/* PHOTO STYLING */
 
 .profile-photo {
+    display: block;
     width: 145px;
     height: 145px;
+    margin: 0 auto 22px;
+    border: 3px solid #ffc4dc;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid rgba(255,196,220,.85);
-    box-shadow: 0 0 35px rgba(255,110,166,.25);
-    margin: 0 auto 22px;
+    box-shadow: 0 0 28px #ff83b444;
 }
 
-.big-emoji {
-    font-size: 65px;
-    margin: 12px 0 18px;
+.gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 22px 0;
+}
+
+.gallery img {
     display: block;
+    width: 100%;
+    height: 215px;
+    object-fit: cover;
+    object-position: center;
+    border: 1px solid #ffffff35;
+    border-radius: 18px;
+    background: #35172b;
 }
 
-.divider {
-    height: 1px;
-    width: 75%;
-    margin: 23px auto;
-    background: linear-gradient(90deg, transparent, #ff9cbe, transparent);
+/* Visible message if an image fails to load */
+
+.photo-wrap {
+    position: relative;
+    min-width: 0;
+}
+
+.photo-error {
+    display: none;
+    padding: 12px 4px;
+    color: #ffd6e5;
+    font-size: 11px;
+    line-height: 1.5;
 }
 
 /* CAKE */
 
 .cake-wrap {
-    margin: 20px auto 25px;
     height: 155px;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 20px auto;
 }
 
 .cake {
     position: relative;
     width: 160px;
-    height: 90px;
+    height: 85px;
+    margin-top: 20px;
     border-radius: 12px 12px 18px 18px;
-    background: linear-gradient(#ffc4d8 0 25%, #f27ba6 25% 100%);
-    box-shadow: inset 0 -8px rgba(190,55,105,.13),
-                0 12px 30px rgba(0,0,0,.25);
-    animation: cakePop .8s ease both;
+    background: linear-gradient(#ffc4d8 0 25%, #f27ba6 25%);
+    box-shadow: inset 0 -8px #bf396b20, 0 12px 30px #0004;
+    animation: cakePop .7s ease;
 }
 
 .cake::before {
@@ -323,37 +337,35 @@ p {
     width: 168px;
     height: 25px;
     border-radius: 50%;
-    background: #ffe6ef;
+    background: #ffe8f0;
 }
 
 .cake::after {
     content: "♡  ♡  ♡";
     position: absolute;
+    top: 38px;
     left: 0;
     right: 0;
-    top: 38px;
-    color: #fff2f7;
+    color: white;
     font-size: 18px;
-    letter-spacing: 7px;
+    letter-spacing: 5px;
 }
 
 .candle {
     position: absolute;
-    left: 50%;
     top: -43px;
+    left: 50%;
     width: 8px;
     height: 34px;
-    border-radius: 4px;
-    background: repeating-linear-gradient(
-        45deg, #fff 0 5px, #ff83ae 5px 10px
-    );
+    background: repeating-linear-gradient(45deg, white 0 5px, #ff83ae 5px 10px);
     transform: translateX(-50%);
+    border-radius: 4px;
 }
 
 .flame {
     position: absolute;
+    top: -18px;
     left: 50%;
-    top: -19px;
     width: 14px;
     height: 20px;
     border-radius: 50% 50% 50% 0;
@@ -364,113 +376,98 @@ p {
 }
 
 @keyframes flicker {
-    from { opacity: .75; transform: translateX(-50%) rotate(-45deg) scale(.9); }
-    to { opacity: 1; transform: translateX(-50%) rotate(-40deg) scale(1.08); }
+    from { opacity: .7; }
+    to { opacity: 1; }
 }
 
 @keyframes cakePop {
-    from { transform: translateY(20px) scale(.8); opacity: 0; }
-    to { transform: translateY(0) scale(1); opacity: 1; }
+    from { opacity: 0; transform: translateY(15px) scale(.8); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
-/* GALLERY */
-
-.gallery {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    margin: 22px 0;
-}
-
-.gallery img {
-    width: 100%;
-    height: 215px;
-    object-fit: cover;
-    border-radius: 18px;
-    border: 1px solid rgba(255,255,255,.25);
-    transition: transform .25s;
-}
-
-.gallery img:hover {
-    transform: scale(1.025);
+.divider {
+    height: 1px;
+    width: 75%;
+    margin: 23px auto;
+    background: linear-gradient(90deg, transparent, #ff9cbe, transparent);
 }
 
 /* ENVELOPE */
 
 .envelope-area {
-    margin: 30px auto 25px;
+    position: relative;
     width: 230px;
     height: 150px;
-    position: relative;
+    margin: 30px auto 25px;
     cursor: pointer;
-    perspective: 700px;
 }
 
 .envelope {
     position: absolute;
     inset: 0;
+    overflow: visible;
     background: #ffb7d0;
     border-radius: 8px;
-    box-shadow: 0 12px 35px rgba(0,0,0,.25);
+    box-shadow: 0 12px 35px #0004;
 }
 
-.envelope::before {
-    content: "";
+.envelope-flap {
     position: absolute;
     inset: 0;
+    z-index: 3;
     background: #ff9fc0;
     clip-path: polygon(0 0, 50% 58%, 100% 0);
     transform-origin: top;
-    transition: transform .65s;
-    z-index: 3;
+    transition: transform .6s;
 }
 
-.envelope::after {
-    content: "♥";
+.envelope-heart {
     position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    color: #c13c70;
-    font-size: 34px;
     z-index: 4;
+    top: 50%;
+    left: 50%;
+    color: #c13c70;
+    font-size: 32px;
+    transform: translate(-50%, -50%);
 }
 
-.envelope.open::before {
-    transform: rotateX(180deg);
-}
-
-.letter-paper {
+.paper {
     position: absolute;
+    z-index: 2;
     left: 12px;
     right: 12px;
     bottom: 10px;
     height: 110px;
+    padding: 14px 8px;
     overflow: hidden;
-    background: #fff6fa;
     color: #66324b;
-    padding: 14px 10px;
+    background: #fff6fa;
     border-radius: 5px;
     font-family: 'Playfair Display', serif;
     font-size: 12px;
     transition: transform .7s, height .7s;
-    z-index: 2;
 }
 
-.envelope.open .letter-paper {
+.envelope.open .envelope-flap {
+    transform: rotateX(180deg);
+}
+
+.envelope.open .paper {
     height: 180px;
     transform: translateY(-100px);
 }
 
+/* LETTER */
+
 .letter-text {
-    text-align: left;
-    background: rgba(255,246,250,.96);
-    color: #593047;
-    border-radius: 18px;
-    padding: 24px 21px;
-    line-height: 1.9;
-    font-size: 14px;
     margin: 20px 0;
+    padding: 23px 20px;
+    text-align: left;
+    color: #593047;
+    background: #fff6fa;
+    border-radius: 18px;
+    font-size: 14px;
+    line-height: 1.9;
 }
 
 .letter-text p {
@@ -478,22 +475,17 @@ p {
     margin-bottom: 13px;
 }
 
-.footer-note {
-    font-size: 11px;
-    color: #cbb0bf;
-    margin-top: 20px;
-}
-
 @media (max-width: 360px) {
-    .card { padding: 25px 16px; }
+    .card { padding: 25px 15px; }
     .keypad { gap: 7px; }
     .key { min-height: 50px; }
-    .gallery img { height: 170px; }
+    .gallery img { height: 175px; }
 }
 </style>
 </head>
 
 <body>
+
 <div class="background"></div>
 <div id="hearts"></div>
 
@@ -501,14 +493,17 @@ p {
 <section class="page active" id="page1">
     <div class="card" id="passwordCard">
         <div class="top-heart">💗</div>
-        <span class="eyebrow">A little surprise awaits</span>
+
+        <span class="eyebrow">A LITTLE SURPRISE AWAITS</span>
+
         <h1>Hey, <span class="pink">Shreya</span></h1>
+
         <p class="subtitle">
             Someone made something special for you.<br>
             Can you unlock it? 🌷
         </p>
 
-        <div class="password-display" id="passwordDisplay">
+        <div class="password-dots">
             <span class="dot"></span>
             <span class="dot"></span>
             <span class="dot"></span>
@@ -535,43 +530,63 @@ p {
             <button class="key action" id="deleteBtn">⌫ DELETE</button>
         </div>
 
-        <div class="error" id="passwordMessage" aria-live="polite"></div>
-        <p class="footer-note">Made with a little extra love ♡</p>
+        <p class="message" id="passwordMessage" aria-live="polite"></p>
+
+        <p class="footer">Made with a little extra love ♡</p>
     </div>
 </section>
 
 <!-- PAGE 2: WELCOME -->
 <section class="page" id="page2">
     <div class="card">
-        <img class="profile-photo" src="shreya1.png" alt="A special memory"
+        <img class="profile-photo"
+             src="./shreya1.png"
+             alt="A special memory"
              onerror="this.style.display='none'">
-        <span class="eyebrow">Unlocked successfully ✨</span>
+
+        <span class="eyebrow">UNLOCKED SUCCESSFULLY ✨</span>
+
         <h1>It's for <span class="pink">you</span>!</h1>
+
         <p class="subtitle">
             I have a little surprise prepared just for you.<br>
             Ready to see it? 🥹
         </p>
-        <button class="primary-btn" data-next="page3">Open my surprise →</button>
+
+        <button class="primary-btn" data-next="page3">
+            Open my surprise →
+        </button>
     </div>
 </section>
 
-<!-- PAGE 3: CUTE QUESTION -->
+<!-- PAGE 3: YES OR NO -->
 <section class="page" id="page3">
     <div class="card">
-        <span class="big-emoji">🥺💗</span>
-        <span class="eyebrow">One tiny question</span>
+        <div class="top-heart">🥺💗</div>
+
+        <span class="eyebrow">ONE TINY QUESTION</span>
+
         <h2>Are you ready for your birthday surprise?</h2>
+
         <p class="subtitle">Choose carefully... hehe! 🌸</p>
-        <button class="primary-btn" id="yesBtn">YES! Show me 💕</button>
-        <button class="secondary-btn" id="noBtn">Not yet 🙈</button>
-        <p class="small" id="questionMessage" style="margin-top:15px"></p>
+
+        <button class="primary-btn" id="yesBtn">
+            YES! Show me 💕
+        </button>
+
+        <button class="secondary-btn" id="noBtn">
+            Not yet 🙈
+        </button>
+
+        <p class="message" id="questionMessage"></p>
     </div>
 </section>
 
-<!-- PAGE 4: BIRTHDAY -->
+<!-- PAGE 4: BIRTHDAY CAKE -->
 <section class="page" id="page4">
     <div class="card">
-        <span class="eyebrow">Today is all about you</span>
+        <span class="eyebrow">TODAY IS ALL ABOUT YOU</span>
+
         <h1>Happy Birthday,<br><span class="pink">Shreya!</span> 🎂</h1>
 
         <div class="cake-wrap">
@@ -590,27 +605,55 @@ p {
 
         <div class="divider"></div>
 
-        <button class="primary-btn" data-next="page5">See our memories →</button>
+        <button class="primary-btn" data-next="page5">
+            See our memories →
+        </button>
     </div>
 </section>
 
-<!-- PAGE 5: PHOTO GALLERY -->
+<!-- PAGE 5: GALLERY -->
 <section class="page" id="page5">
     <div class="card">
-        <span class="eyebrow">Little moments, lovely memories</span>
+        <span class="eyebrow">LITTLE MOMENTS, LOVELY MEMORIES</span>
+
         <h2>Our little <span class="pink">gallery</span> 📸</h2>
-        <p class="subtitle">Some pictures make a day feel extra special.</p>
+
+        <p class="subtitle">
+            Some pictures make a day feel extra special.
+        </p>
 
         <div class="gallery">
-            <img src="shreya1.png" alt="Memory one">
-            <img src="shreya2.png" alt="Memory two">
+            <div class="photo-wrap">
+                <img
+                    id="galleryPhoto1"
+                    src="./shreya1.png"
+                    alt="Memory one"
+                >
+                <p id="error1" class="photo-error">
+                    Photo not found. Check that shreya1.png is beside index.html.
+                </p>
+            </div>
+
+            <div class="photo-wrap">
+                <img
+                    id="galleryPhoto2"
+                    src="./shreya2.png"
+                    alt="Memory two"
+                >
+                <p id="error2" class="photo-error">
+                    Photo not found. Check that shreya2.png is beside index.html.
+                </p>
+            </div>
         </div>
 
         <p>Every picture has its own little story. ♡</p>
 
         <div style="margin-top:22px">
             <button class="secondary-btn" data-prev="page4">← Back</button>
-            <button class="primary-btn" data-next="page6">One last thing 💌</button>
+
+            <button class="primary-btn" data-next="page6">
+                One last thing 💌
+            </button>
         </div>
     </div>
 </section>
@@ -618,31 +661,43 @@ p {
 <!-- PAGE 6: ENVELOPE -->
 <section class="page" id="page6">
     <div class="card">
-        <span class="eyebrow">A little letter for you</span>
+        <span class="eyebrow">A LITTLE LETTER FOR YOU</span>
+
         <h2>Something from the <span class="pink">heart</span></h2>
+
         <p class="subtitle">Tap the envelope to open it. 💌</p>
 
-        <div class="envelope-area" id="envelopeArea" role="button"
-             tabindex="0" aria-label="Open the letter">
+        <div class="envelope-area" id="envelopeArea"
+             role="button" tabindex="0" aria-label="Open the letter">
+
             <div class="envelope" id="envelope">
-                <div class="letter-paper">
+                <div class="paper">
                     <strong>Dear Shreya,</strong><br><br>
                     A little note made especially for you...
                 </div>
+
+                <div class="envelope-flap"></div>
+                <div class="envelope-heart">♥</div>
             </div>
         </div>
 
-        <p id="envelopeMessage" class="small">Tap once to open your letter ♡</p>
+        <p class="small" id="envelopeMessage">
+            Tap once to open your letter ♡
+        </p>
 
-        <button class="primary-btn" id="readLetterBtn" style="display:none"
-                data-next="page7">Read your letter →</button>
+        <button class="primary-btn" id="readLetterBtn"
+                style="display:none; margin-top:15px"
+                data-next="page7">
+            Read your letter →
+        </button>
     </div>
 </section>
 
 <!-- PAGE 7: LETTER -->
 <section class="page" id="page7">
     <div class="card">
-        <span class="eyebrow">A few words for you</span>
+        <span class="eyebrow">A FEW WORDS FOR YOU</span>
+
         <h2>Dear <span class="pink">Shreya</span> 💗</h2>
 
         <div class="letter-text">
@@ -673,20 +728,27 @@ p {
             </p>
         </div>
 
-        <button class="primary-btn" data-next="page8">One final surprise ✨</button>
+        <button class="primary-btn" data-next="page8">
+            One final surprise ✨
+        </button>
     </div>
 </section>
 
 <!-- PAGE 8: FINAL SURPRISE -->
 <section class="page" id="page8">
     <div class="card">
-        <img class="profile-photo" src="shreya2.png" alt="A lovely memory"
+        <img class="profile-photo"
+             src="./shreya2.png"
+             alt="A lovely memory"
              onerror="this.style.display='none'">
 
-        <span class="eyebrow">The little ending</span>
+        <span class="eyebrow">THE LITTLE ENDING</span>
+
         <h1>Keep <span class="pink">smiling</span>! 🌸</h1>
 
-        <span class="big-emoji">🎂💗🎁</span>
+        <div class="top-heart" style="margin-top:20px">
+            🎂💗🎁
+        </div>
 
         <p class="subtitle">
             This little website was made to bring a smile to your face.
@@ -704,23 +766,27 @@ p {
 </section>
 
 <script>
-/* =========================================
-   PASSWORD KEYPAD
-   Correct password: 0901
-========================================= */
+/* PASSWORD */
 
 const correctPassword = "0901";
 let enteredPassword = "";
 let passwordLocked = false;
+let passwordTimer = null;
 
 const dots = document.querySelectorAll(".dot");
 const passwordMessage = document.getElementById("passwordMessage");
 const passwordCard = document.getElementById("passwordCard");
 
-function updatePasswordDisplay() {
+function updateDots() {
     dots.forEach((dot, index) => {
         dot.classList.toggle("filled", index < enteredPassword.length);
     });
+}
+
+function resetPassword() {
+    enteredPassword = "";
+    passwordLocked = false;
+    updateDots();
 }
 
 function addNumber(number) {
@@ -728,30 +794,32 @@ function addNumber(number) {
 
     enteredPassword += number;
     passwordMessage.textContent = "";
-    updatePasswordDisplay();
+    updateDots();
 
     if (enteredPassword.length === 4) {
         passwordLocked = true;
 
-        setTimeout(() => {
+        passwordTimer = setTimeout(() => {
             if (enteredPassword === correctPassword) {
                 passwordMessage.textContent = "Yay! Correct password 💗";
-                setTimeout(() => showPage("page2"), 450);
+                burstHearts(12);
+
+                setTimeout(() => {
+                    showPage("page2");
+                    resetPassword();
+                }, 450);
             } else {
                 passwordCard.classList.remove("shake");
-
-                // Restart the animation if the user enters another wrong code.
                 void passwordCard.offsetWidth;
                 passwordCard.classList.add("shake");
 
                 passwordMessage.textContent =
-                    "Oopsie! Wrong password 🥺 Try again, cutie!";
+                    "Oopsie! Wrong password 🥺 Try again! 💕";
 
-                setTimeout(() => {
-                    enteredPassword = "";
-                    passwordLocked = false;
-                    updatePasswordDisplay();
-                    passwordMessage.textContent = "It's okay, try once more 💕";
+                passwordTimer = setTimeout(() => {
+                    resetPassword();
+                    passwordMessage.textContent =
+                        "It's okay, try once more 💗";
                     passwordCard.classList.remove("shake");
                 }, 1100);
             }
@@ -769,48 +837,43 @@ document.getElementById("clearBtn").addEventListener("click", () => {
     if (passwordLocked) return;
     enteredPassword = "";
     passwordMessage.textContent = "";
-    updatePasswordDisplay();
+    updateDots();
 });
 
 document.getElementById("deleteBtn").addEventListener("click", () => {
     if (passwordLocked) return;
     enteredPassword = enteredPassword.slice(0, -1);
     passwordMessage.textContent = "";
-    updatePasswordDisplay();
+    updateDots();
 });
 
-// Also support a physical keyboard when testing on a computer.
+/* KEYBOARD SUPPORT */
+
 document.addEventListener("keydown", event => {
     if (!document.getElementById("page1").classList.contains("active")) return;
 
     if (/^[0-9]$/.test(event.key)) {
         addNumber(event.key);
-    } else if (event.key === "Backspace") {
-        if (!passwordLocked) {
-            enteredPassword = enteredPassword.slice(0, -1);
-            updatePasswordDisplay();
-        }
-    } else if (event.key === "Escape") {
-        if (!passwordLocked) {
-            enteredPassword = "";
-            updatePasswordDisplay();
-        }
+    } else if (event.key === "Backspace" && !passwordLocked) {
+        enteredPassword = enteredPassword.slice(0, -1);
+        updateDots();
+    } else if (event.key === "Escape" && !passwordLocked) {
+        enteredPassword = "";
+        updateDots();
     }
 });
 
-/* =========================================
-   PAGE NAVIGATION
-========================================= */
+/* NAVIGATION */
 
 function showPage(pageId) {
     document.querySelectorAll(".page").forEach(page => {
         page.classList.remove("active");
     });
 
-    const destination = document.getElementById(pageId);
+    const target = document.getElementById(pageId);
 
-    if (destination) {
-        destination.classList.add("active");
+    if (target) {
+        target.classList.add("active");
         window.scrollTo({ top: 0, behavior: "smooth" });
     }
 }
@@ -827,9 +890,7 @@ document.querySelectorAll("[data-prev]").forEach(button => {
     });
 });
 
-/* =========================================
-   YES / NO SURPRISE QUESTION
-========================================= */
+/* YES / NO QUESTION */
 
 document.getElementById("yesBtn").addEventListener("click", () => {
     showPage("page4");
@@ -839,8 +900,6 @@ document.getElementById("yesBtn").addEventListener("click", () => {
 let noClicks = 0;
 
 document.getElementById("noBtn").addEventListener("click", () => {
-    noClicks++;
-
     const messages = [
         "Are you sure? 🥺",
         "Just a tiny surprise! 🙈",
@@ -849,14 +908,12 @@ document.getElementById("noBtn").addEventListener("click", () => {
     ];
 
     document.getElementById("questionMessage").textContent =
-        messages[Math.min(noClicks - 1, messages.length - 1)];
+        messages[Math.min(noClicks, messages.length - 1)];
 
-    // The button stays usable; it doesn't trick the visitor.
+    noClicks++;
 });
 
-/* =========================================
-   ENVELOPE OPENING
-========================================= */
+/* ENVELOPE */
 
 const envelope = document.getElementById("envelope");
 const envelopeArea = document.getElementById("envelopeArea");
@@ -869,6 +926,7 @@ function openEnvelope() {
     envelope.classList.add("open");
     envelopeMessage.textContent = "Your letter is ready 💌";
     readLetterBtn.style.display = "inline-block";
+
     burstHearts(8);
 }
 
@@ -881,16 +939,16 @@ envelopeArea.addEventListener("keydown", event => {
     }
 });
 
-/* =========================================
-   FLOATING HEARTS
-========================================= */
+/* FLOATING HEARTS */
 
 const heartsContainer = document.getElementById("hearts");
 
 function createHeart() {
     const heart = document.createElement("span");
-    heart.className = "floating-heart";
-    heart.textContent = ["♡", "♥", "💕", "✧"][Math.floor(Math.random() * 4)];
+    heart.className = "heart";
+
+    const symbols = ["♡", "♥", "💕", "✧"];
+    heart.textContent = symbols[Math.floor(Math.random() * symbols.length)];
 
     heart.style.left = Math.random() * 100 + "vw";
     heart.style.fontSize = (12 + Math.random() * 19) + "px";
@@ -898,7 +956,7 @@ function createHeart() {
 
     heartsContainer.appendChild(heart);
 
-    setTimeout(() => heart.remove(), 14500);
+    setTimeout(() => heart.remove(), 15000);
 }
 
 setInterval(createHeart, 850);
@@ -909,25 +967,50 @@ function burstHearts(amount) {
     }
 }
 
-/* =========================================
-   RESTART
-========================================= */
+/* PHOTO ERROR HANDLING */
+
+function handlePhotoError(imageId, errorId) {
+    const img = document.getElementById(imageId);
+    const error = document.getElementById(errorId);
+
+    img.addEventListener("error", () => {
+        img.style.display = "none";
+        error.style.display = "block";
+    });
+
+    img.addEventListener("load", () => {
+        img.style.display = "block";
+        error.style.display = "none";
+    });
+
+    // Handles images that fail before the listener is added.
+    if (img.complete && img.naturalWidth === 0) {
+        img.style.display = "none";
+        error.style.display = "block";
+    }
+}
+
+handlePhotoError("galleryPhoto1", "error1");
+handlePhotoError("galleryPhoto2", "error2");
+
+/* RESTART */
 
 document.getElementById("restartBtn").addEventListener("click", () => {
-    enteredPassword = "";
-    passwordLocked = false;
-    updatePasswordDisplay();
+    clearTimeout(passwordTimer);
 
+    resetPassword();
     passwordMessage.textContent = "";
     document.getElementById("questionMessage").textContent = "";
+
+    noClicks = 0;
 
     envelope.classList.remove("open");
     envelopeMessage.textContent = "Tap once to open your letter ♡";
     readLetterBtn.style.display = "none";
 
-    noClicks = 0;
     showPage("page1");
 });
 </script>
+
 </body>
 </html>
